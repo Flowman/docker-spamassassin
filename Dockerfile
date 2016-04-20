@@ -3,6 +3,7 @@ FROM alpine:latest
 RUN \
 	apk add --no-cache \
 		spamassassin \
+		wget \
 	&& sa-update
 
 ENTRYPOINT ["spamd"]

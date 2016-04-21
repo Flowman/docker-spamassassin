@@ -10,4 +10,4 @@ ENTRYPOINT ["spamd"]
 
 EXPOSE 783
 
-CMD ["--siteconfigpath=/etc/mail/spamassassin", "--max-children", "5", "--create-prefs" , "--user-config", "--syslog", "/proc/self/fd/2"]
+CMD ["--siteconfigpath=/etc/mail/spamassassin", "--max-children", "5", "--create-prefs" , "--user-config", "--syslog", "/var/log/spamd.log", "--listen=", "0.0.0.0:783", "-u", "mail"]
